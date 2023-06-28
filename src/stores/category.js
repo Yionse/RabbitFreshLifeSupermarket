@@ -12,7 +12,7 @@ export const useCategoryStore = defineStore('category', () => {
     // 将获取到的数据，赋值给定义好的响应式数据
     navList.value = res.result;
   }
-  // 组合式API写法，将数据和方法暴露出去
+  // 组合式API写法，将数据和方法暴露出去 
   return {
     navList,
     getNavList
