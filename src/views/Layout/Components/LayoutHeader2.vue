@@ -14,7 +14,8 @@
       <ul class="app-header-nav">
         <li class="home"><router-link to="/">首页</router-link></li>
         <!-- 通过v-for将获取到的数据，遍历渲染到页面上 -->
-        <li class="home" v-for="item in categoryStore.navList" :key="item.id"><RouterLink to="/">{{item.name}}</RouterLink>
+        <li class="home" v-for="item in categoryStore.navList" :key="item.id">
+          <RouterLink active-class="active" :to="`/category/${item.id}`">{{item.name}}</RouterLink>
         </li>
       </ul>
       <div class="search">
