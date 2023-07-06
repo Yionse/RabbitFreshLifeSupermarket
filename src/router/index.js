@@ -32,7 +32,13 @@ const router = createRouter({
       path: '/login',
       component: () => import("@/views/Login/index.vue")
     }
-  ]
+  ],
+  // 路由滚动行为的优化，每次路由跳转时，到顶端的距离都是0
+  scrollBehavior() {
+    return {
+      top: 0
+    }
+  }
 })
 
 // 默认暴露
