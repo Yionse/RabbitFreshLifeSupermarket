@@ -7,14 +7,17 @@ import { onMounted, ref } from "vue";
 const route = useRoute();
 
 const categorySubData = ref({});
-const categoryGoods = ref({});
+const categoryGoods = ref([]);
 
-const reqData = {
+const reqData = ref({
   categoryId: route.params.id,
   page: 1,
   pageSize: 20,
   sortField: "publishTime"
-};
+});
+
+// 定义是否继续监听无限滚动事件
+const disabled = ref(false);
 
 const getCategorySubFilterData = async () => {
   const res = await getCategorySubFilterLIst(route.params.id);
@@ -23,7 +26,7 @@ const getCategorySubFilterData = async () => {
 
 const getSubCategoryData = async () => {
   const res = await getSubCategoryDataList(reqData);
-  categoryGoods.value = res.result;
+  categoryGoods.value = res.result.items;
 };
 
 onMounted(() => {
@@ -35,6 +38,15 @@ const tabChange = () => {
   console.log(1, reqData.sortField);
   reqData.value.page = 1;
   getSubCategoryData();
+}
+
+const load = async () => {
+  reqData.value.page++;
+  const res = await getSubCategoryDataList(reqData.value);
+  categoryGoods.value = [...categoryGoods.value, ...res.result.items];
+  if(res.result.items.length === 0) {
+    disabled.value = true;
+  }
 }
 </script>
 
@@ -64,9 +76,9 @@ const tabChange = () => {
           name="evaluateNum"
         ></el-tab-pane>
       </el-tabs>
-      <div class="body">
+      <div class="body" v-infinite-scroll="load" :infinite-scroll-disabled="disabled">
         <!-- 商品列表-->
-        <GoodsItem v-for="goods in categoryGoods.items" :good="goods" :key="goods.id" />
+        <GoodsItem v-for="goods in categoryGoods" :good="goods" :key="goods.id" />
       </div>
     </div>
   </div>
