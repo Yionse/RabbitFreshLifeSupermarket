@@ -3,7 +3,7 @@
 
 // createRouter用于获得一个router实例
 // createWebHistory用来创建History模式的路由，路由模式分为hash和History，
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 // 创建router实例
 const router = createRouter({
@@ -33,7 +33,7 @@ const router = createRouter({
       component: () => import("@/views/Login/index.vue")
     }, {
       path: '/detail/:id',
-      component: () => import('@/views/Detail/index.vue')
+      component: () => import("@/views/Detail/index.vue")
     }
   ],
   // 路由滚动行为的优化，每次路由跳转时，到顶端的距离都是0
