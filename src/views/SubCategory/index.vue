@@ -1,21 +1,41 @@
 <script setup>
-import {getCategorySubFilterLIst} from '@/apis/categoryApis';
-import {useRoute} from 'vue-router';
-import {onMounted, ref} from 'vue';
+import GoodsItem from '@/views/Home/components/GoodsItem.vue';
+import { getCategorySubFilterLIst, getSubCategoryDataList } from "@/apis/categoryApis";
+import { useRoute } from "vue-router";
+import { onMounted, ref } from "vue";
 
 const route = useRoute();
 
 const categorySubData = ref({});
+const categoryGoods = ref({});
+
+const reqData = {
+  categoryId: route.params.id,
+  page: 1,
+  pageSize: 20,
+  sortField: "publishTime"
+};
 
 const getCategorySubFilterData = async () => {
   const res = await getCategorySubFilterLIst(route.params.id);
   categorySubData.value = res.result;
-}
+};
+
+const getSubCategoryData = async () => {
+  const res = await getSubCategoryDataList(reqData);
+  categoryGoods.value = res.result;
+};
 
 onMounted(() => {
   getCategorySubFilterData();
-})
+  getSubCategoryData();
+});
 
+const tabChange = () => {
+  console.log(1, reqData.sortField);
+  reqData.value.page = 1;
+  getSubCategoryData();
+}
 </script>
 
 <template>
@@ -30,13 +50,23 @@ onMounted(() => {
       </el-breadcrumb>
     </div>
     <div class="sub-container">
-      <el-tabs>
-        <el-tab-pane label="最新商品" name="publishTime"></el-tab-pane>
-        <el-tab-pane label="最高人气" name="orderNum"></el-tab-pane>
-        <el-tab-pane label="评论最多" name="evaluateNum"></el-tab-pane>
+      <el-tabs v-model="reqData.sortField" @tab-change= "tabChange">
+        <el-tab-pane
+          label="最新商品"
+          name="publishTime"
+        ></el-tab-pane>
+        <el-tab-pane
+          label="最高人气"
+          name="orderNum"
+        ></el-tab-pane>
+        <el-tab-pane
+          label="评论最多"
+          name="evaluateNum"
+        ></el-tab-pane>
       </el-tabs>
       <div class="body">
-         <!-- 商品列表-->
+        <!-- 商品列表-->
+        <GoodsItem v-for="goods in categoryGoods.items" :good="goods" :key="goods.id" />
       </div>
     </div>
   </div>
@@ -97,7 +127,5 @@ onMounted(() => {
     display: flex;
     justify-content: center;
   }
-
-
 }
 </style>

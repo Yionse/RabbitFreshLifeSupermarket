@@ -17,3 +17,11 @@ export function getCategorySubFilterLIst(id) {
     }
   });
 }
+
+export function getSubCategoryDataList(data) {
+  return httpInstance({
+    url: '/category/goods/temporary',
+    method: 'POST',
+    data
+  });
+}
