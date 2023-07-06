@@ -8,3 +8,12 @@ export function getCategoryList(id) {
     }
   });
 }
+
+export function getCategorySubFilterLIst(id) {
+  return httpInstance({
+    url: '/category/sub/filter',
+    params: {
+      id
+    }
+  });
+}
