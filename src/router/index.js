@@ -26,14 +26,14 @@ const router = createRouter({
         }, {
           path: 'category/sub/:id',
           component: () => import('@/views/SubCategory/index.vue')
+        }, {
+          path: 'detail/:id',
+          component: () => import("@/views/Detail/index.vue")
         }
       ]
     },{
       path: '/login',
       component: () => import("@/views/Login/index.vue")
-    }, {
-      path: '/detail/:id',
-      component: () => import("@/views/Detail/index.vue")
     }
   ],
   // 路由滚动行为的优化，每次路由跳转时，到顶端的距离都是0

@@ -11,14 +11,10 @@ const httpInstance = axios.create({
 
 // 配置拦截器
 // axios请求拦截器
-httpInstance.interceptors.request.use(config => {
-  return config;
-}, e => Promise.reject(e));
+httpInstance.interceptors.request.use(config => config, e => Promise.reject(e));
 
 // axios响应式拦截器
-httpInstance.interceptors.response.use(res => res.data, e => {
-  return Promise.reject(e);
-});
+httpInstance.interceptors.response.use(res => res.data, e => Promise.reject(e));
 
 // 采用默认暴露的方式，供其他组件使用
 export default httpInstance;
