@@ -3,12 +3,25 @@ import {getHotGoodsApi} from '@/apis/detailApis';
 import {ref, onMounted} from 'vue';
 import {useRoute} from 'vue-router';
 
+const props = defineProps({
+  hotType: {
+    type: Number
+  }
+});
+
+const TITLEMAP = {
+  1: '24小时热榜',
+  2: '周热榜'
+};
+
+const title = TITLEMAP[props.hotType];
+
 const route = useRoute();
 
 const hotGoodsData = ref([]);
 
 const getHotGoods = async () => {
-  const res = await getHotGoodsApi({id:route.params.id, type: '1', limit: 3});
+  const res = await getHotGoodsApi({id:route.params.id, type: props.hotType, limit: 3});
   hotGoodsData.value = res.result;
 }
 
@@ -21,7 +34,7 @@ onMounted(() => {
 
 <template>
   <div class="goods-hot">
-    <h3>周日榜单</h3>
+    <h3>{{title}}</h3>
     <!-- 商品区块 -->
     <RouterLink to="/" class="goods-item" v-for="item in hotGoodsData" :key="item.id">
       <img :src="item.picture" alt="" />
@@ -51,7 +64,7 @@ onMounted(() => {
     padding: 20px 30px;
     text-align: center;
     background: #fff;
-
+    
     img {
       width: 160px;
       height: 160px;

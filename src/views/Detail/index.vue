@@ -5,14 +5,12 @@ import {getDetailApi} from '@/apis/detailApis';
 import DetailHot from '@/views/Detail/components/DetailHot.vue'
 
 const route = useRoute();
-console.log(route.params.id);
 
 const goodsData = ref({});
 
 const getGoodsData = async () => {
   const res = await getDetailApi(route.params.id);
   goodsData.value = res.result;
-  console.log(goodsData.value.brand.name);
 }
 
 onMounted(() => {
@@ -123,8 +121,8 @@ onMounted(() => {
             </div>
             <!-- 24热榜+专题推荐 -->
             <div class="goods-aside">
-              <DetailHot />
-              <DetailHot />
+              <DetailHot :hotType="1" />
+              <DetailHot :hotType="2" />
             </div>
           </div>
         </div>
