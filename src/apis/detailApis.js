@@ -8,3 +8,14 @@ export function getDetailApi(id) {
     }
   });
 }
+
+export function getHotGoodsApi({id, type, limit = 3}) {
+  return httpInstance({
+    url: '/goods/hot',
+    params: {
+      id,
+      type,
+      limit
+    }
+  });
+}
