@@ -21,7 +21,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="xtx-goods-page">
+  <div class="xtx-goods-page" v-show="goodsData.name">
     <div class="container">
       <div class="bread-container">
         <el-breadcrumb separator=">">
@@ -39,7 +39,7 @@ onMounted(() => {
           <div class="goods-info">
             <div class="media">
               <!-- 图片预览区 -->
-              <ImgView />
+              <ImgView :imageList="goodsData.mainPictures" />
               <!-- 统计数量 -->
               <ul class="goods-sales">
                 <li>
