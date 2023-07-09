@@ -1,9 +1,11 @@
 <script setup>
 import {ref} from 'vue';
-import {loginApi} from '@/apis/userApis';
 import {ElMessage} from 'element-plus';
 import 'element-plus/theme-chalk/el-message.css';
 import {useRouter} from 'vue-router';
+import {userInforStore} from '@/stores/user';
+
+const userInfo = userInforStore();
 
 const formNode = ref(null);
 
@@ -39,9 +41,9 @@ const rules = {
 
 // 登录验证
 const doLogin = () => {
-  formNode.value.validate( async (valid) => {
+  formNode.value.validate((valid) => {
     if (valid) {
-      await loginApi(form.value.account, form.value.password);
+      userInfo.getUserInfo(form.value.account, form.value.password);
       ElMessage({type: 'success', message: '登陆成功！'});
       router.replace('/');
     }
