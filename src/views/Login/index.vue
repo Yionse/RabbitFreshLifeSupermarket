@@ -1,7 +1,13 @@
 <script setup>
 import {ref} from 'vue';
+import {loginApi} from '@/apis/userApis';
+import {ElMessage} from 'element-plus';
+import 'element-plus/theme-chalk/el-message.css';
+import {useRouter} from 'vue-router';
 
 const formNode = ref(null);
+
+const router = useRouter();
 
 const form = ref({
   account: '',
@@ -15,9 +21,10 @@ const rules = {
   ],
   password: [
     { required: true, message: '密码不能为空', trigger: 'blur'},
-    { min: 4, max: 16, message: '密码长度4-16位', trigger: 'change'}
+    { min: 6, max: 16, message: '密码长度6-16位', trigger: 'change'}
   ],
   agree: [
+    // 自定义校验规则
     {
       validator: (rule, value, callback) => {
         if (value) {
@@ -30,9 +37,14 @@ const rules = {
   ]
 };
 
+// 登录验证
 const doLogin = () => {
-  formNode.value.validate((valid) => {
-    console.log(valid);
+  formNode.value.validate( async (valid) => {
+    if (valid) {
+      await loginApi(form.value.account, form.value.password);
+      ElMessage({type: 'success', message: '登陆成功！'});
+      router.replace('/');
+    }
   });
 }
 

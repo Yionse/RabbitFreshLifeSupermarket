@@ -1,5 +1,7 @@
 // 导入axios
 import axios from "axios";
+import {ElMessage} from 'element-plus';
+import 'element-plus/theme-chalk/el-message.css';
 
 // 获取一个实例
 const httpInstance = axios.create({
@@ -14,7 +16,13 @@ const httpInstance = axios.create({
 httpInstance.interceptors.request.use(config => config, e => Promise.reject(e));
 
 // axios响应式拦截器
-httpInstance.interceptors.response.use(res => res.data, e => Promise.reject(e));
+httpInstance.interceptors.response.use(res => res.data, e => {
+  ElMessage({
+    type: 'warning',
+    message: e.response.data.message
+  });
+  return Promise.reject(e)
+});
 
 // 采用默认暴露的方式，供其他组件使用
 export default httpInstance;
