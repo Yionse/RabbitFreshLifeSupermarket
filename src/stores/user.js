@@ -15,4 +15,6 @@ export const userInforStore = defineStore('userInforStore', () => {
     userInfo,
     getUserInfo
   }
+}, {  //  配置Pinia中的数据持久化存储
+  persist: true
 });

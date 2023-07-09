@@ -41,9 +41,9 @@ const rules = {
 
 // 登录验证
 const doLogin = () => {
-  formNode.value.validate((valid) => {
+  formNode.value.validate( async (valid) => {
     if (valid) {
-      userInfo.getUserInfo(form.value.account, form.value.password);
+      await userInfo.getUserInfo(form.value.account, form.value.password);
       ElMessage({type: 'success', message: '登陆成功！'});
       router.replace('/');
     }
