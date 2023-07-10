@@ -1,9 +1,9 @@
 // 导入axios
 import axios from "axios";
-import {ElMessage} from 'element-plus';
+import { ElMessage } from 'element-plus';
 import 'element-plus/theme-chalk/el-message.css';
-import {useUserInforStore} from '@/stores/user';
-
+import { useUserInforStore } from '@/stores/user';
+import router from '@/router';
 // 获取一个实例
 const httpInstance = axios.create({
   // 配置整个项目的请求基地址
@@ -29,6 +29,13 @@ httpInstance.interceptors.response.use(res => res.data, e => {
     type: 'warning',
     message: e.response.data.message
   });
+  const userInfo = useUserInforStore();
+  // token失效401错误捕获
+  if (e.response.status == '401') {
+    // 获取Router实例
+    userInfo.clearUserInfo();
+    router.replace('/login');
+  }
   return Promise.reject(e)
 });
 
