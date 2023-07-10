@@ -2,6 +2,7 @@
 import axios from "axios";
 import {ElMessage} from 'element-plus';
 import 'element-plus/theme-chalk/el-message.css';
+import {useUserInforStore} from '@/stores/user';
 
 // 获取一个实例
 const httpInstance = axios.create({
@@ -13,7 +14,14 @@ const httpInstance = axios.create({
 
 // 配置拦截器
 // axios请求拦截器
-httpInstance.interceptors.request.use(config => config, e => Promise.reject(e));
+httpInstance.interceptors.request.use(config => {
+  const userInfo = useUserInforStore();
+  const token = userInfo.userInfo.token;
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+}, e => Promise.reject(e));
 
 // axios响应式拦截器
 httpInstance.interceptors.response.use(res => res.data, e => {
