@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 import { ref } from 'vue';
 import { loginApi } from '@/apis/userApis';
 
-export const userInforStore = defineStore('userInforStore', () => {
+export const useUserInforStore = defineStore('useUserInforStore', () => {
   // 定义数据
   const userInfo = ref({});
   // 定义action

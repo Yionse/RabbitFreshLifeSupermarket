@@ -3,9 +3,9 @@ import {ref} from 'vue';
 import {ElMessage} from 'element-plus';
 import 'element-plus/theme-chalk/el-message.css';
 import {useRouter} from 'vue-router';
-import {userInforStore} from '@/stores/user';
+import {useUserInforStore} from '@/stores/user';
 
-const userInfo = userInforStore();
+const userInfo = useUserInforStore();
 
 const formNode = ref(null);
 
