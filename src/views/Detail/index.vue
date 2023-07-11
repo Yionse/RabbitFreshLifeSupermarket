@@ -1,15 +1,15 @@
 <script setup>
 import DetailHot from '@/views/Detail/components/DetailHot.vue'
 import {ref, onMounted} from 'vue';
-import {useRoute} from 'vue-router';
+import {onBeforeRouteUpdate, useRoute} from 'vue-router';
 import {getDetailApi} from '@/apis/detailApis';
 
 const route = useRoute();
 
 const goodsData = ref({});
 
-const getGoodsData = async () => {
-  const res = await getDetailApi(route.params.id);
+const getGoodsData = async (id) => {
+  const res = await getDetailApi(id);
   goodsData.value = res.result;
 }
 
@@ -18,7 +18,11 @@ const skuChange = (sku) => {
 }
 
 onMounted(() => {
-  getGoodsData();
+  getGoodsData(route.params.id);
+})
+
+onBeforeRouteUpdate((to) => {
+  getGoodsData(to.params.id);
 })
 
 </script>
