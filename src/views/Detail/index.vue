@@ -52,6 +52,7 @@ const addCart = () => {
       attrsTest: skuObj.attrsTest,
       selected: true
     });
+    ElMessage({type: 'success', message: '加入购物车成功！'});
   }else {
     ElMessage({type: 'warning', message: '请选择规格！'});  
   }
