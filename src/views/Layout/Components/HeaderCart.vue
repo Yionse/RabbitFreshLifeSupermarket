@@ -1,7 +1,15 @@
 <script setup>
 import { useCartStore } from '@/stores/cart';
+import { useRouter } from 'vue-router';
 
 const cartStore = useCartStore();
+
+const router = useRouter();
+
+// 跳转购物车列表
+const goCartList = () => {
+  router.replace('/cartList');
+}
 </script>
 
 <template>
@@ -33,7 +41,7 @@ const cartStore = useCartStore();
           <p>共 {{cartStore.allCount}} 件商品</p>
           <p>&yen; {{cartStore.allPrice.toFixed(2)}} </p>
         </div>
-        <el-button size="large" type="primary" >去购物车结算</el-button>
+        <el-button size="large" type="primary" @click="goCartList">去购物车结算</el-button>
       </div>
     </div>
 </div>
