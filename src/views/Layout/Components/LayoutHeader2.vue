@@ -1,6 +1,8 @@
 <script setup>
   // 引入store
   import {useCategoryStore} from '@/stores/category';
+  // 引入头部个购物车
+  import HeaderCart from '@/views/Layout/Components/HeaderCart.vue';
   // 使用刚才引入的函数，得到store实例，然后就可以使用store中的数据
   const categoryStore = useCategoryStore();
 </script>
@@ -23,7 +25,7 @@
         <input type="text" placeholder="搜一搜">
       </div>
       <!-- 头部购物车 -->
-      
+      <HeaderCart />
     </div>
   </header>
 </template>
