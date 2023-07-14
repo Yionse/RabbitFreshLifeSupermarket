@@ -10,7 +10,7 @@ export const useCartStore = defineStore('cart', () => {
   const userStore = useUserInforStore();
 
   // 是否登录
-  const isLogin = userStore.userInfo.token;
+  const isLogin = userStore.userInfo?.token;
 
   // 获取最新列表
   const getNewCartList = async () => {
@@ -84,7 +84,8 @@ export const useCartStore = defineStore('cart', () => {
     allCheck,
     checkPrice,
     checkCount,
-    clearCart
+    clearCart,
+    getNewCartList
   }
 }, {
   persist: true
