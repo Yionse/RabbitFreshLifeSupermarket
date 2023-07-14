@@ -6,6 +6,11 @@ const cartStore = useCartStore();
 const singleCheck = (selected, skuId) => {
   cartStore.singleCheck(skuId, selected);
 }
+
+// 全选功能
+const allChange = (selected) => {
+  cartStore.allCheck(selected);
+}
 </script>
 
 <template>
@@ -16,7 +21,7 @@ const singleCheck = (selected, skuId) => {
           <thead>
             <tr>
               <th width="120">
-                <el-checkbox/>
+                <el-checkbox :model-value="cartStore.isAll" @change="allChange" />
               </th>
               <th width="400">商品信息</th>
               <th width="220">单价</th>

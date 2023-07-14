@@ -28,18 +28,26 @@ export const useCartStore = defineStore('cart', () => {
     item.selected = selected;
   }
 
+  // 全选功能
+  const allCheck = (selected) => {
+    cartList.value.forEach(item => item.selected = selected);
+  }
+
   // 计算出商品总量
   const allCount = computed(() => cartList.value.reduce((count, item) => count + item.count , 0));
   // 计算出商品总价
   const allPrice = computed(() => cartList.value.reduce((price, item) => price + item.count * item.price , 0));
-
+  // 计算当前是否全部选中
+  const isAll = computed(() => cartList.value.every( item => item.selected));
   return {
     cartList,
     allCount,
     allPrice,
     singleCheck,
     addCart,
-    delCart
+    delCart,
+    isAll,
+    allCheck
   }
 }, {
   persist: true
