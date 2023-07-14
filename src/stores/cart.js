@@ -22,6 +22,12 @@ export const useCartStore = defineStore('cart', () => {
     cartList.value.splice(idx, 1);
   }
 
+  // 单选功能
+  const singleCheck = (skuId, selected) => {
+    const item = cartList.value.find(item => skuId === item.skuId);
+    item.selected = selected;
+  }
+
   // 计算出商品总量
   const allCount = computed(() => cartList.value.reduce((count, item) => count + item.count , 0));
   // 计算出商品总价
@@ -31,6 +37,7 @@ export const useCartStore = defineStore('cart', () => {
     cartList,
     allCount,
     allPrice,
+    singleCheck,
     addCart,
     delCart
   }
