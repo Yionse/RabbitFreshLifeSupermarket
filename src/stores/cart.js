@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { computed, ref } from 'vue'; 
 import { useUserInforStore } from "./user";
-import { addCartApi, getNewCartListApi } from '@/apis/cartApis';
+import { addCartApi, getNewCartListApi, delCartListApi } from '@/apis/cartApis';
 
 export const useCartStore = defineStore('cart', () => {
   const cartList = ref([]);
@@ -12,13 +12,18 @@ export const useCartStore = defineStore('cart', () => {
   // 是否登录
   const isLogin = userStore.userInfo.token;
 
+  // 获取最新列表
+  const getNewCartList = async () => {
+    const res = await getNewCartListApi();
+    cartList.value = res.result;
+  }
+
   // 定义添加到购物车操作
   const addCart = async (goods) => {
     const { skuId, count } = goods;
     if (isLogin) {
       await addCartApi(skuId, count);
-      const res = await getNewCartListApi();
-      cartList.value = res.result;
+      getNewCartList();
     }else {
       const item = cartList.value.find(item => item.skuId === goods.skuId); 
       if (item) {
@@ -31,10 +36,15 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   // 删除购物车中的数据
-  const delCart = (skuId) => {
-    // 获取当前元素的下标值，然后删除
-    const idx = cartList.value.findIndex(item => skuId === item.skuId);
-    cartList.value.splice(idx, 1);
+  const delCart = async (skuId) => {
+    if (isLogin) {
+      await delCartListApi([skuId]);
+      getNewCartList();
+    } else {
+      // 获取当前元素的下标值，然后删除
+      const idx = cartList.value.findIndex(item => skuId === item.skuId);
+      cartList.value.splice(idx, 1);
+    }
   }
 
   // 单选功能
