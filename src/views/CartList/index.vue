@@ -1,6 +1,9 @@
 <script setup>
 import { useCartStore } from '@/stores/cart';
+import { useRouter} from 'vue-router';
 const cartStore = useCartStore();
+
+const router = useRouter();
 
 // 单选功能
 const singleCheck = (selected, skuId) => {
@@ -10,6 +13,11 @@ const singleCheck = (selected, skuId) => {
 // 全选功能
 const allChange = (selected) => {
   cartStore.allCheck(selected); 
+}
+
+// 跳转
+const goCheckout = () => {
+  router.push('/checkout');
 }
 </script>
 
@@ -85,7 +93,7 @@ const allChange = (selected) => {
           <span class="red">¥ {{cartStore.checkPrice.toFixed(2)}} </span>
         </div>
         <div class="total">
-          <el-button size="large" type="primary" >下单结算</el-button>
+          <el-button size="large" type="primary" @click="goCheckout">下单结算</el-button>
         </div>
       </div>
     </div>

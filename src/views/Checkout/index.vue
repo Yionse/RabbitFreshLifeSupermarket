@@ -1,6 +1,5 @@
 <script setup>
 import { getCheckoutInfoApi } from '@/apis/checkoutApis';
-import { fa } from 'element-plus/es/locale';
 import { onMounted, ref } from 'vue';
 
 const getCheckoutInfo = async () => {
