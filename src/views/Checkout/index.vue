@@ -1,5 +1,6 @@
 <script setup>
 import { getCheckoutInfoApi } from '@/apis/checkoutApis';
+import { fa } from 'element-plus/es/locale';
 import { onMounted, ref } from 'vue';
 
 const getCheckoutInfo = async () => {
@@ -14,6 +15,18 @@ const curAddress = ref({});  // 地址对象
 const toggleFlag = ref(false);  //  控制弹窗是否显示
 
 onMounted(() => getCheckoutInfo());
+
+const activeAddress = ref({});
+
+const changeActiveAddress = (item) => {
+  activeAddress.value = item;
+}
+
+const confim = () => {
+  curAddress.value = activeAddress.value;
+  toggleFlag.value = false;
+  activeAddress.value = {};
+}
 
 </script>
 
@@ -117,7 +130,7 @@ onMounted(() => getCheckoutInfo());
   <!-- 切换地址 -->
   <el-dialog v-model="toggleFlag" title="切换收货地址" width="30%" center>
     <div class="addressWrapper">
-      <div class="text item" v-for="item in checkInfo.userAddresses"  :key="item.id">
+      <div class="text item" @click="changeActiveAddress(item)" v-for="item in checkInfo.userAddresses"  :key="item.id" :class="{active : activeAddress.id === item.id}">
         <ul>
         <li><span>收<i />货<i />人：</span>{{ item.receiver }} </li>
         <li><span>联系方式：</span>{{ item.contact }}</li>
@@ -128,7 +141,7 @@ onMounted(() => getCheckoutInfo());
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="toggleFlag=false">取消</el-button>
-        <el-button type="primary">确定</el-button>
+        <el-button type="primary" @click="confim">确定</el-button>
       </span>
     </template>
   </el-dialog>
