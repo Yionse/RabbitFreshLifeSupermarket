@@ -1,6 +1,10 @@
 <script setup>
-import { getCheckoutInfoApi } from '@/apis/checkoutApis';
+import { getCheckoutInfoApi, getOrderIdApi } from '@/apis/checkoutApis';
 import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useCartStore } from '@/stores/cart';
+const router = useRouter();
+const cartStore = useCartStore();
 
 const getCheckoutInfo = async () => {
   const res = await getCheckoutInfoApi();
@@ -25,6 +29,25 @@ const confim = () => {
   curAddress.value = activeAddress.value;
   toggleFlag.value = false;
   activeAddress.value = {};
+}
+
+const confimOrder = async () => {
+  const res = await getOrderIdApi({
+    deliveryTimeType: 1,
+    payType: 1,
+    payChannel: 1,
+    buyerMessage: '',
+    goods: checkInfo.value.goods.map(item => {
+      return {
+        skuId: item.skuId, 
+        count:item.count
+        }
+    }),
+    addressId: curAddress.value.id
+  });
+  cartStore.getNewCartList();
+  const orderId = res.result.id;
+  router.replace(`/pay?id=${orderId}`);
 }
 
 </script>
@@ -121,7 +144,7 @@ const confim = () => {
         </div>
         <!-- 提交订单 -->
         <div class="submit">
-          <el-button type="primary" size="large" >提交订单</el-button>
+          <el-button type="primary" size="large" @click="confimOrder">提交订单</el-button>
         </div>
       </div>
     </div>
