@@ -9,9 +9,6 @@ export const useCartStore = defineStore('cart', () => {
   // 获取用户信息
   const userStore = useUserInforStore();
 
-  // 是否登录
-  const isLogin = userStore.userInfo?.token;
-
   // 获取最新列表
   const getNewCartList = async () => {
     const res = await getNewCartListApi();
@@ -20,6 +17,8 @@ export const useCartStore = defineStore('cart', () => {
 
   // 定义添加到购物车操作
   const addCart = async (goods) => {
+    // 是否登录
+    const isLogin = userStore.userInfo?.token;
     const { skuId, count } = goods;
     if (isLogin) {
       await addCartApi(skuId, count);
@@ -37,7 +36,10 @@ export const useCartStore = defineStore('cart', () => {
 
   // 删除购物车中的数据
   const delCart = async (skuId) => {
+    // 是否登录
+    const isLogin = userStore.userInfo?.token;
     if (isLogin) {
+      console.log('调用了删除接口');
       await delCartListApi([skuId]);
       getNewCartList();
     } else {
@@ -49,6 +51,7 @@ export const useCartStore = defineStore('cart', () => {
 
   // 清空购物车
   const clearCart = () => {
+    console.log('清除');
     cartList.value = [];
   }
 

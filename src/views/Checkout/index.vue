@@ -32,6 +32,7 @@ const confim = () => {
 }
 
 const confimOrder = async () => {
+  console.log('请求开始发送');
   const res = await getOrderIdApi({
     deliveryTimeType: 1,
     payType: 1,
@@ -47,6 +48,7 @@ const confimOrder = async () => {
   });
   cartStore.getNewCartList();
   const orderId = res.result.id;
+  console.log('走到了这里');
   router.replace(`/pay?id=${orderId}`);
 }
 

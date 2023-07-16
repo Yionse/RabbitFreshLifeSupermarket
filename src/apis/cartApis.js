@@ -21,6 +21,7 @@ export const getNewCartListApi = () => {
 
 // 删除购物车中的数据
 export const delCartListApi = (ids) => {
+  console.log('apis中的接口');
   return httpInstance({
     url: '/member/cart',
     method: 'DELETE',
