@@ -3,12 +3,15 @@ import { getCheckoutInfoApi } from '@/apis/checkoutApis';
 import { onMounted, ref } from 'vue';
 
 const getCheckoutInfo = async () => {
-  const res = await getCheckoutInfo();
-  checkInfo.value = res.result.checkInfo;
+  const res = await getCheckoutInfoApi();
+  checkInfo.value = res.result;
+  curAddress.value =  checkInfo.value.userAddresses.find(item => item.isDefault === 0);
 }
 
 const checkInfo = ref({});  // 订单对象
 const curAddress = ref({});  // 地址对象
+
+const toggleFlag = ref(false);  //  控制弹窗是否显示
 
 onMounted(() => getCheckoutInfo());
 
@@ -112,6 +115,23 @@ onMounted(() => getCheckoutInfo());
     </div>
   </div>
   <!-- 切换地址 -->
+  <el-dialog v-model="toggleFlag" title="切换收货地址" width="30%" center>
+    <div class="addressWrapper">
+      <div class="text item" v-for="item in checkInfo.userAddresses"  :key="item.id">
+        <ul>
+        <li><span>收<i />货<i />人：</span>{{ item.receiver }} </li>
+        <li><span>联系方式：</span>{{ item.contact }}</li>
+        <li><span>收货地址：</span>{{ item.fullLocation + item.address }}</li>
+        </ul>
+      </div>
+    </div>
+    <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="toggleFlag=false">取消</el-button>
+        <el-button type="primary">确定</el-button>
+      </span>
+    </template>
+  </el-dialog>
   <!-- 添加地址 -->
 </template>
 
