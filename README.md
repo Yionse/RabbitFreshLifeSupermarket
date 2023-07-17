@@ -68,7 +68,7 @@ npm run dev
 
 ## 所使用到的技术栈
 
-![one](..\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\one.png)
+![Image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/one.png)
 
 ## 路由详解
 
@@ -76,28 +76,28 @@ npm run dev
 
 ## 接口详解
 
-![one](..\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\three.png)
+![Image]((https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/three.png))
 
 # 组件详解
 
 ## LayoutNav
 
-- ![one](..\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\four.png)
+- ![Image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/four.png)
 - 有两种状态，登录与未登录
-- ![image-20230717175058248](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717175058248.png)
-- ![image-20230717175213328](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717175213328.png)
+- ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175058248.png)
+- ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175213328.png)
 
 ## LayoutHeader
 
-- ![image-20230717175245698](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717175245698.png)
+- ![image-20230717175245698](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175245698.png)
 - 这里还有另外一个组件，是当夜间 滑动时固定在上面部分的，类似于该组件，且 接口也是同一个，区别是这里有一个购物车按钮
-- ![image-20230717175343450](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717175343450.png)
-- ![image-20230717175434415](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717175434415.png)
+- ![image-20230717175343450](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175343450.png)
+- ![image-20230717175434415](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175434415.png)
 
 ## LayoutFooter
 
 - 底部组件，没有什么交互
-- ![image-20230717175522024](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717175522024.png)
+- ![image-20230717175522024](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175522024.png)
 
 ## HeaderCart
 
