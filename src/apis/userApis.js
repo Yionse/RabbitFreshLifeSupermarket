@@ -20,3 +20,10 @@ export const getLikeListAPI = (limit = 4) => {
     }
   });
 }
+
+export const getOrderListAPI = (params) => {
+  return httpInstance({
+    url: '/member/order',
+    params
+  });
+}
