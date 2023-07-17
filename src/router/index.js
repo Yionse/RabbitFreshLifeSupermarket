@@ -9,7 +9,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // 配置路由规则
+    // 配置路由规则 
     {
       path: '/',
       // 这里采用了动态组件的方法，提高性能
@@ -38,6 +38,19 @@ const router = createRouter({
         }, {
           path: 'pay',
           component: () => import("@/views/Pay/index.vue")
+        }, {
+          path: 'member',
+          component: () => import("@/views/Member/index.vue"),
+          // 配置三级路由
+          children: [
+            {
+              path: 'user',
+              component: () => import("@/views/Member/components/UserInfo.vue")
+            }, {
+              path: 'order',
+              component: () => import("@/views/Member/components/UserOrder.vue")
+            }
+          ]
         }
       ]
     },{
