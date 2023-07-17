@@ -27,8 +27,8 @@ const total = ref(0);
 
 const getOrderList = async () => {
   const res = await getOrderListAPI(params.value);
-  orderList.value = res.result.items;
-  total.value = res.result.counts;
+  orderList.value = res?.result.items;
+  total.value = res?.result.counts;
 }
 
 onMounted(() => getOrderList());
@@ -41,6 +41,18 @@ const tabChange = (type) => {
 const currentChange = (page) => {
   params.value.page = page;
   getOrderList();
+}
+
+const payState = (state) => {
+  const stateMap = {
+    1: '待付款',
+    2: '待发货',
+    3: '待收货',
+    4: '待评价',
+    5: '已完成',
+    6: '已取消'
+  };
+  return stateMap[state]
 }
 
 </script>
@@ -88,7 +100,7 @@ const currentChange = (page) => {
                 </ul>
               </div>
               <div class="column state">
-                <p>{{ order.orderState }}</p>
+                <p>{{ payState(order.orderState) }}</p>
                 <p v-if="order.orderState === 3">
                   <a href="javascript:;" class="green">查看物流</a>
                 </p>

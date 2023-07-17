@@ -44,7 +44,7 @@ const router = createRouter({
           // 配置三级路由
           children: [
             {
-              path: 'user',
+              path: '',
               component: () => import("@/views/Member/components/UserInfo.vue")
             }, {
               path: 'order',
