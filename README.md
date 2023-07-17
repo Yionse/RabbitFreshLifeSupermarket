@@ -113,14 +113,14 @@ npm run dev
   - 密码都是hm#qd@23!
 - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175951114.png)
 - 配置自定义的校验规则
-  - ![image]https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717180027987.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717180027987.png)
 - 进行登录验证
-  - ![image]https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717180103766.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717180103766.png)
 
 ## Detail
 
 - 详情页
-  - ![image]https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182648646.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182648646.png)
 - 面包屑导航
   - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182728962.png)
   - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182735011.png)
