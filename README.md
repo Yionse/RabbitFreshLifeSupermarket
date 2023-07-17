@@ -97,13 +97,13 @@ npm run dev
 ## LayoutFooter
 
 - 底部组件，没有什么交互
-- ![image-20230717175522024](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175522024.png)
+- ![imag](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175522024.png)
 
 ## HeaderCart
 
 - nav中的小购物车图标
-- <img src="D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717175630248.png" alt="image-20230717175630248" style="zoom:67%;" />
-- <img src="D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717175842492.png" alt="image-20230717175842492" style="zoom:50%;" />
+- ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175630248.png)
+- ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175842492.png)
 
 ## Login
 
