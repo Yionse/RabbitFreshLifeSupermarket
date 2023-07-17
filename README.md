@@ -111,58 +111,56 @@ npm run dev
 - 账号密码
   - 账号heima282，好像可以一直到heima290
   - 密码都是hm#qd@23!
-- ![image-20230717175951114](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717175951114.png)
+- ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175951114.png)
 - 配置自定义的校验规则
-  - ![image-20230717180027987](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717180027987.png)
+  - ![image]https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717180027987.png)
 - 进行登录验证
-  - ![image-20230717180103766](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717180103766.png)
+  - ![image]https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717180103766.png)
 
 ## Detail
 
 - 详情页
-  - ![image-20230717182648646](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717182648646.png)
+  - ![image]https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182648646.png)
 - 面包屑导航
-  - ![image-20230717182728962](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717182728962.png)
-  - ![image-20230717182735011](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717182735011.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182728962.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182735011.png)
 - SKU组件
-  - ![image-20230717182753049](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717182753049.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182753049.png)
 - 热榜
-  - <img src="D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717182808104.png" alt="image-20230717182808104" style="zoom:67%;" />
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182808104.png)
 - 加入购物车调用接口
-  - <img src="D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717182828986.png" alt="image-20230717182828986" style="zoom:50%;" />
-
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182828986.png)
 ## CartList
 
 - 购物车页面
-  - ![image-20230717182935042](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717182935042.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182935042.png)
 - 采用封装好的Store进行状态管理
-  - <img src="D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717182948179.png" alt="image-20230717182948179" style="zoom:50%;" />
-- 利用Computed计算出属性，进行展示
-  - ![image-20230717183050345](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717183050345.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717182948179.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717183050345.png)
 
 ## Checkout
 
 - 提交订单界面
-  - ![image-20230717183116173](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717183116173.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717183116173.png)
 - 可以进行地址切换
-  - <img src="D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717183129599.png" alt="image-20230717183129599" style="zoom: 50%;" />
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717183129599.png)
 
 ## Pay
 
 - 支付页
-  - ![image-20230717183208473](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717183208473.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717183208473.png)
   - 只有支付宝可以使用
 - 使用的是虚拟支付，但现在已经无法支付了，所以只能到这一步
 
 # Store详解
 
 - cart.js
-  - ![image-20230717183358009](D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717183358009.png)
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717183358009.png)
   - 与购物车相关的，添加，删除，全选，单选等
 - category.js
-  - <img src="D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717183455024.png" alt="image-20230717183455024" style="zoom:50%;" />
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717183455024.png)
   - nav相关的，这里是为了不重复发两次请求，所以使用了Pinia
 - user.js
-  - <img src="D:\OneDrive\桌面\GitHub\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\image-20230717183547078.png" alt="image-20230717183547078" style="zoom:50%;" />
+  - ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717183547078.png)
   - 用户相关的，存储了用户的信息，最下面的persist做了持久化存储，与笨比的LocalStorage同步
 
