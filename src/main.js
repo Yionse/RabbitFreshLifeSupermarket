@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import  piniaPluginPersistedstate   from 'pinia-plugin-persistedstate';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+// 页面标题
+import VueWechatTitle from 'vue-wechat-title'; 
 
 import App from './App.vue'
 import router from './router'
@@ -19,6 +21,7 @@ import { componentsPlugin } from './components';
 const app = createApp(App)
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate);
+app.use(VueWechatTitle)
 app.use(pinia);
 app.use(router);
 app.use(lazyPlugin);
