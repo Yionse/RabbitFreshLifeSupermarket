@@ -72,11 +72,11 @@ npm run dev
 
 ## 路由详解
 
-![Image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/four.png)
+![Image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/two.png)
 
 ## 接口详解
 
-![Image]((https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/three.png))
+![Image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/three.png)
 
 # 组件详解
 
@@ -89,10 +89,10 @@ npm run dev
 
 ## LayoutHeader
 
-- ![image-20230717175245698](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175245698.png)
+- ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175245698.png)
 - 这里还有另外一个组件，是当夜间 滑动时固定在上面部分的，类似于该组件，且 接口也是同一个，区别是这里有一个购物车按钮
-- ![image-20230717175343450](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175343450.png)
-- ![image-20230717175434415](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175434415.png)
+- ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175343450.png)
+- ![image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/image-20230717175434415.png)
 
 ## LayoutFooter
 
