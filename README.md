@@ -72,7 +72,7 @@ npm run dev
 
 ## 路由详解
 
-![one](..\ProjectDescriptionPicture\RabbitFreshLifeSupermarket\two.png)
+![Image](https://github.com/Yionse/ProjectDescriptionPicture/blob/main/RabbitFreshLifeSupermarket/four.png)
 
 ## 接口详解
 
